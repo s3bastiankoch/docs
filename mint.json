@@ -1,92 +1,85 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
-  "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
-  },
+  "name": "Document AI",
   "favicon": "/favicon.png",
   "colors": {
     "primary": "#c4f000",
     "light": "#c4f000",
     "dark": "#c4f000",
-    "background": "#090014",
+    "background": {
+      "dark": "#090014",
+      "light": "#ffffff"
+    },
     "anchors": {
-      "from": "#FF7F57",
-      "to": "#9563FF"
+      "from": "#33381d",
+      "to": "#33381d"
     }
   },
   "topbarLinks": [
     {
-      "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "name": "Sign In",
+      "url": "https://app.document-ai.net/sign-in"
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "name": "Get Started",
+    "url": "https://app.document-ai.net"
   },
-  "tabs": [
+  "anchors": [
     {
       "name": "API Reference",
+      "icon": "cloud",
       "url": "api-reference"
     }
   ],
-  "anchors": [
-    {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
-    }
-  ],
+  "api": {
+    "baseUrl": "https://app.document-ai.net/api"
+  },
+  "openapi": "https://app.document-ai.net/api/openapi",
+
   "navigation": [
     {
       "group": "Get Started",
+      "pages": ["introduction"]
+    },
+    {
+      "group": "Platform",
       "pages": [
-        "introduction",
-        "quickstart",
-        "development"
+        {
+          "group": "Email Extraction",
+          "pages": ["platform/email-extraction/overview"]
+        },
+        {
+          "group": "Document Processing",
+          "pages": ["platform/document-processing/overview"]
+        },
+        {
+          "group": "Semantic Search",
+          "pages": ["platform/semantic-search/overview"]
+        },
+        {
+          "group": "Chatbots",
+          "pages": ["platform/chatbots/overview"]
+        }
       ]
     },
     {
-      "group": "Essentials",
-      "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation"
-      ]
+      "group": "Extraction",
+      "pages": ["api-reference/endpoint/extraction/post-v1extraction"]
     },
     {
-      "group": "API Documentation",
+      "group": "Task",
       "pages": [
-        "api-reference/authentication"
-      ]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
+        "api-reference/endpoint/task/chat",
+        "api-reference/endpoint/task/embed",
+        "api-reference/endpoint/task/code",
+        "api-reference/endpoint/task/pii"
       ]
     }
   ],
-  "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+  "footerSocials": {},
+  "modeToggle": {
+    "default": "dark",
+    "isHidden": true
   }
 }
